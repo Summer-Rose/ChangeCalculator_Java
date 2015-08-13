@@ -5,7 +5,7 @@ public class ServerRule extends ExternalResource {
 
   protected void before() {
     String[] args = {};
-    RockPaperScissors.main(args);
+    CoinCalculator.main(args);
   }
 
   protected void after() {
