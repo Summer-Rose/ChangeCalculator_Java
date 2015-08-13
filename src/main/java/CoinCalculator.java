@@ -40,26 +40,23 @@ public class CoinCalculator {
         Integer pennies = 0;
 
         while (amount > 0) {
+
+          if (amount >= 25) {
+            amount -= 25;
+            quarters += 1;
+          } else if (amount >= 10) {
+            amount -= 10;
+            dimes += 1;
+          } else if (amount >= 5) {
+            amount -= 5;
+            nickels += 1;
+          } else {
             amount -= 1;
             pennies += 1;
-
-          // if (amount >= 25) {
-          //   amount -= 25;
-          //   quarters += 1;
-          // } else if (amount >= 10) {
-          //   amount -= 10;
-          //   dimes += 1;
-          // } else if (amount >= 5) {
-          //   amount -= 5;
-          //   nickels += 1;
-          // } else {
-          //   amount -= 1;
-          //   pennies += 1;
-          // }
+          }
         }
 
         String changeCalculated = String.format("%d Quarter(s), %d Dime(s), %d Nickel(s), and %d Pennie(s)", quarters, dimes, nickels, pennies);
-        //String changeOutputDimes = String.format("%d Dimes", dimes);
         return changeCalculated;
       }
 
