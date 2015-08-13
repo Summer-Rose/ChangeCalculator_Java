@@ -38,17 +38,23 @@ public class CoinCalculator {
         Integer dimes = 0;
         Integer nickels = 0;
         Integer pennies = 0;
+        Integer availableQuarters = 1;
+        Integer availableDimes = 5;
+        Integer availableNickels = 3;
 
         while (amount > 0) {
 
-          if (amount >= 25) {
+          if (amount >= 25 && availableQuarters > 0) {
             amount -= 25;
+            availableQuarters -= 1;
             quarters += 1;
-          } else if (amount >= 10) {
+          } else if (amount >= 10 && availableDimes > 0) {
             amount -= 10;
+            availableDimes -= 1;
             dimes += 1;
-          } else if (amount >= 5) {
+          } else if (amount >= 5 && availableNickels > 0) {
             amount -= 5;
+            availableNickels -= 1;
             nickels += 1;
           } else {
             amount -= 1;
